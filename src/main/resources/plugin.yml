@@ -1,0 +1,7 @@
+name: SMPEssentials
+version: ${project.version}
+main: me.ppgome.smpessentials.SMPEssentials
+api-version: 1.18
+authors: [ PPGOME ]
+description: A Minecraft plugin that adds various tools and features to the OwO SMP
+website: https://github.com/PPGOME
