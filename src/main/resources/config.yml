@@ -1,2 +1,9 @@
+# Prefix
+Prefix: '&6[&bSMP&6]'
+
+# Messages
+SMPEssentials:
+  ReloadMessage: '&4The plugin has reloaded!'
+
 # Enables the /penis command (I am so sorry)
 penis: true

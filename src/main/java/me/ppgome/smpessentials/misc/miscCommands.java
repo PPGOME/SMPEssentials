@@ -1,5 +1,6 @@
 package me.ppgome.smpessentials.misc;
 
+import me.ppgome.smpessentials.SMPEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Commands extends JavaPlugin implements CommandExecutor {
+public class miscCommands implements CommandExecutor {
 
     Map<String, Long> cooldowns = new HashMap<String, Long>();
 
@@ -22,7 +23,7 @@ public class Commands extends JavaPlugin implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (command.getName().equalsIgnoreCase("penis")) {
-            if (getConfig().getBoolean("penis")) {
+            if (SMPEssentials.getPlugin().getConfig().getBoolean("penis")) {
                 Player p = (Player) sender;
                 Random rand = new Random();
                 int size = rand.nextInt(13);
