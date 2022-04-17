@@ -7,7 +7,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -38,168 +37,37 @@ public class miscCommands implements CommandExecutor {
                         return true;
 
                     } else {
-                        for (Player player : Bukkit.getOnlinePlayers()) {
-                            if (size == 0) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8D");
+
+                        for(int length = 0; length <= size; length++) {
+                            String result = new String(new char[length]).replace("\0", "=");
+                            if(length == size) {
+                                for(Player player : Bukkit.getOnlinePlayers()) {
+
+                                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                                            SMPEssentials.getPlugin().getConfig().getString("Prefix")
+                                    + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
+
+                                }
                             }
-                            if (size == 1) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=D");
-                            }
-                            if (size == 2) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8==D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8==D");
-                            }
-                            if (size == 3) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8===D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8===D");
-                            }
-                            if (size == 4) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8====D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8====D");
-                            }
-                            if (size == 5) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=====D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=====D");
-                            }
-                            if (size == 6) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8======D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8======D");
-                            }
-                            if (size == 7) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=======D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=======D");
-                            }
-                            if (size == 8) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8========D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8========D");
-                            }
-                            if (size == 9) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=========D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8=========D");
-                            }
-                            if (size == 10) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8==========D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8==========D");
-                            }
-                            if (size == 11) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8===========D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8===========D");
-                            }
-                            if (size == 12) {
-                                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8============D");
-                                System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                        ChatColor.RED + p.getName() + "'s PP: 8============D");
-                            }
+                        }
+
+                        for(Player player : Bukkit.getOnlinePlayers()) {
+
                             cooldowns.put(p.getName(), System.currentTimeMillis() + (300 * 1000));
                         }
                     }
                 } else {
                     cooldowns.put(p.getName(), System.currentTimeMillis() + (300 * 1000));
-                    for (Player player : Bukkit.getOnlinePlayers()) {
-                        if (size == 0) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8D");
-                        }
-                        if (size == 1) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=D");
-                        }
-                        if (size == 2) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8==D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8==D");
-                        }
-                        if (size == 3) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8===D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8===D");
-                        }
-                        if (size == 4) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8====D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8====D");
-                        }
-                        if (size == 5) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=====D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=====D");
-                        }
-                        if (size == 6) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8======D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8======D");
-                        }
-                        if (size == 7) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=======D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=======D");
-                        }
-                        if (size == 8) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8========D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8========D");
-                        }
-                        if (size == 9) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=========D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8=========D");
-                        }
-                        if (size == 10) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8==========D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8==========D");
-                        }
-                        if (size == 11) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8===========D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8===========D");
-                        }
-                        if (size == 12) {
-                            player.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8============D");
-                            System.out.println(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                    ChatColor.RED + p.getName() + "'s PP: 8============D");
+                    for(int length = 0; length <= size; length++) {
+                        String result = new String(new char[length]).replace("\0", "=");
+                        if(length == size) {
+                            for(Player player : Bukkit.getOnlinePlayers()) {
+
+                                player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                                        SMPEssentials.getPlugin().getConfig().getString("Prefix")
+                                                + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
+
+                            }
                         }
                     }
                 }
