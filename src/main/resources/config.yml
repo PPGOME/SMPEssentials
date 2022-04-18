@@ -5,5 +5,5 @@ Prefix: '&6[&bSMP&6]'
 SMPEssentials:
   ReloadMessage: '&4The plugin has reloaded!'
 
-# Enables the /penis command (I am so sorry)
+# Enables the /penis command if true (I am so sorry)
 penis: true

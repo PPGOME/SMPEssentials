@@ -31,28 +31,23 @@ public class miscCommands implements CommandExecutor {
                     if (cooldowns.get(p.getName()) > System.currentTimeMillis()) {
                         //They still have time left in the cooldown
                         long timeleft = (cooldowns.get(p.getName()) - System.currentTimeMillis()) / 1000;
-                        p.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "SMP" + ChatColor.GRAY + "] " +
-                                ChatColor.RED + "Command ready in " + timeleft / 60 + " minutes and " + timeleft % 60 +
-                                " seconds!");
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                                SMPEssentials.getPlugin().getConfig().getString("Prefix")
+                                        + ChatColor.RED + " Command ready in " + timeleft / 60 + " minutes and " +
+                                        timeleft % 60 + " seconds!"));
                         return true;
-
                     } else {
-
                         for(int length = 0; length <= size; length++) {
                             String result = new String(new char[length]).replace("\0", "=");
                             if(length == size) {
                                 for(Player player : Bukkit.getOnlinePlayers()) {
-
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                             SMPEssentials.getPlugin().getConfig().getString("Prefix")
                                     + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
-
                                 }
                             }
                         }
-
                         for(Player player : Bukkit.getOnlinePlayers()) {
-
                             cooldowns.put(p.getName(), System.currentTimeMillis() + (300 * 1000));
                         }
                     }
@@ -62,17 +57,13 @@ public class miscCommands implements CommandExecutor {
                         String result = new String(new char[length]).replace("\0", "=");
                         if(length == size) {
                             for(Player player : Bukkit.getOnlinePlayers()) {
-
                                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                         SMPEssentials.getPlugin().getConfig().getString("Prefix")
                                                 + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
-
                             }
                         }
                     }
                 }
-            }
-            return true;
-        } return true;
+            } return true; } return true;
     }
 }
