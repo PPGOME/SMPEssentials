@@ -7,12 +7,13 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
-public class buddingAmethyst {
+public class buddingAmethyst implements Listener {
 
     //BUDDING AMETHYST SILK TOUCH
     @EventHandler
