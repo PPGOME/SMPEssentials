@@ -1,5 +1,7 @@
 package me.ppgome.smpessentials.misc;
 
+import github.scarsz.discordsrv.DiscordSRV;
+import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
 import me.ppgome.smpessentials.SMPEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -45,6 +47,10 @@ public class miscCommands implements CommandExecutor {
                                             SMPEssentials.getPlugin().getConfig().getString("Prefix")
                                     + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
                                 }
+                                TextChannel textchannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("minecraft-chat");
+                                if (textchannel != null) {
+                                    textchannel.sendMessage(p.getName() + "'s PP: 8" + result + "D");
+                                }
                             }
                         }
                         for(Player player : Bukkit.getOnlinePlayers()) {
@@ -60,6 +66,10 @@ public class miscCommands implements CommandExecutor {
                                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                         SMPEssentials.getPlugin().getConfig().getString("Prefix")
                                                 + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
+                            }
+                            TextChannel textchannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("minecraft-chat");
+                            if (textchannel != null) {
+                                textchannel.sendMessage(sender.getName() + "'s PP: 8" + result + "D");
                             }
                         }
                     }

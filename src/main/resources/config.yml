@@ -7,3 +7,10 @@ SMPEssentials:
 
 # Enables the /penis command if true (I am so sorry)
 penis: true
+# Enables the Warp Shard if true (/home equivalent)
+WarpShard: true
+
+# /Home Messages
+Home:
+  WarpShardName: '&b&lWarp &e&lShard'
+  WarpShardLore: '&aBy crouching and right-clicking this item, you are able to warp home!'

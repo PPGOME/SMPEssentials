@@ -32,6 +32,9 @@ public final class SMPEssentials extends JavaPlugin implements Listener, Command
         devCommands SMPEssentials = new devCommands();
         getCommand("smpessentials").setExecutor(SMPEssentials);
 
+        ItemCommands SMPEssentialsGive = new ItemCommands();
+        getCommand("smpessentialsgive").setExecutor(SMPEssentialsGive);
+
     }
 
     @Override

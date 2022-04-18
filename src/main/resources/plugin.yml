@@ -10,4 +10,6 @@ commands:
     description: pp lol
   SMPEssentials:
     description: reload
-
+  SMPEssentialsGive:
+    description: GIMME SHIT WAWAWAWAWA
+softdepend: [DiscordSRV]
