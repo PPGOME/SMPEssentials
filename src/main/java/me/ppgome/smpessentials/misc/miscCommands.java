@@ -39,41 +39,52 @@ public class miscCommands implements CommandExecutor {
                                         timeleft % 60 + " seconds!"));
                         return true;
                     } else {
-                        for(int length = 0; length <= size; length++) {
+                        for (int length = 0; length <= size; length++) {
                             String result = new String(new char[length]).replace("\0", "=");
-                            if(length == size) {
-                                for(Player player : Bukkit.getOnlinePlayers()) {
+                            if (length == size) {
+                                for (Player player : Bukkit.getOnlinePlayers()) {
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                             SMPEssentials.getPlugin().getConfig().getString("Prefix")
-                                    + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
+                                                    + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
                                 }
-                                TextChannel textchannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("minecraft-chat");
-                                if (textchannel != null) {
-                                    textchannel.sendMessage(p.getName() + "'s PP: 8" + result + "D");
+                                if (SMPEssentials.getPlugin().getServer().getPluginManager().getPlugin("DiscordSRV") != null) {
+                                    TextChannel textChannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
+
+                                    // null if the channel isn't specified in the config.yml
+                                    if (textChannel != null) {
+                                        textChannel.sendMessage(":straight_ruler: " + p.getName() + "'s PP: 8" + result + "D").queue();
+                                    }
                                 }
                             }
                         }
-                        for(Player player : Bukkit.getOnlinePlayers()) {
+                        for (Player player : Bukkit.getOnlinePlayers()) {
                             cooldowns.put(p.getName(), System.currentTimeMillis() + (300 * 1000));
                         }
                     }
                 } else {
                     cooldowns.put(p.getName(), System.currentTimeMillis() + (300 * 1000));
-                    for(int length = 0; length <= size; length++) {
+                    for (int length = 0; length <= size; length++) {
                         String result = new String(new char[length]).replace("\0", "=");
-                        if(length == size) {
-                            for(Player player : Bukkit.getOnlinePlayers()) {
+                        if (length == size) {
+                            for (Player player : Bukkit.getOnlinePlayers()) {
                                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                                         SMPEssentials.getPlugin().getConfig().getString("Prefix")
                                                 + " " + ChatColor.RED + p.getName() + "'s PP: 8" + result + "D"));
                             }
-                            TextChannel textchannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("minecraft-chat");
-                            if (textchannel != null) {
-                                textchannel.sendMessage(sender.getName() + "'s PP: 8" + result + "D");
+                            if (SMPEssentials.getPlugin().getServer().getPluginManager().getPlugin("DiscordSRV") != null) {
+                                TextChannel textChannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("global");
+
+                                // null if the channel isn't specified in the config.yml
+                                if (textChannel != null) {
+                                    textChannel.sendMessage(":straight_ruler: " + p.getName() + "'s PP: 8" + result + "D").queue();
+                                }
                             }
                         }
                     }
                 }
-            } return true; } return true;
+            }
+            return true;
+        }
+        return true;
     }
 }

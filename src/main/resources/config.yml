@@ -14,3 +14,7 @@ WarpShard: true
 Home:
   WarpShardName: '&b&lWarp &e&lShard'
   WarpShardLore: '&aBy crouching and right-clicking this item, you are able to warp home!'
+
+# Bee Boots
+BeeBootsName: '&eBee Boots'
+BeeBootsEnabled: true
